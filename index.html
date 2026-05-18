@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marfin Vicko Firmansyah — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+
+  <div class="content-wrapper">
+    <!-- Navigation -->
+    <nav class="hero-nav" id="navbar">
+      <div class="nav-logo">MAR<span>FIN</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#skills">Keahlian</a></li>
+        <li><a href="#process">Proses</a></li>
+        <li><a href="#projects">Proyek</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay">
+      <ul class="mobile-nav">
+        <li><a href="#about" onclick="closeMobileMenu()">Tentang</a></li>
+        <li><a href="#skills" onclick="closeMobileMenu()">Keahlian</a></li>
+        <li><a href="#process" onclick="closeMobileMenu()">Proses</a></li>
+        <li><a href="#projects" onclick="closeMobileMenu()">Proyek</a></li>
+        <li><a href="#contact" onclick="closeMobileMenu()">Kontak</a></li>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="flower-deco flower-1">
+        <svg width="120" height="120" viewBox="0 0 100 100"><path d="M50 0C55 20 80 20 100 50C80 55 80 80 50 100C45 80 20 80 0 50C20 45 20 20 50 0Z"/></svg>
+      </div>
+      <div class="flower-deco flower-2">
+        <svg width="80" height="80" viewBox="0 0 100 100"><path d="M50 0C55 20 80 20 100 50C80 55 80 80 50 100C45 80 20 80 0 50C20 45 20 20 50 0Z"/></svg>
+      </div>
+      <div class="flower-deco flower-3">
+        <svg width="60" height="60" viewBox="0 0 100 100"><path d="M50 0C55 20 80 20 100 50C80 55 80 80 50 100C45 80 20 80 0 50C20 45 20 20 50 0Z"/></svg>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-label">
+          <div class="hero-label-line"></div>
+          <span class="hero-label-text">Full-Stack Developer</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="line1">Portfolio</span>
+          <span class="line2 glitch-text" data-text="PROG">PROG</span>
+          <span class="line3 glitch-text" data-text="RAMMER">RAMMER</span>
+        </h1>
+        <div class="hero-subtitle">
+          <div class="hero-tags">
+            <span>Backend</span>
+            <span>Frontend</span>
+            <span>Full-Stack</span>
+          </div>
+          <p class="hero-desc">
+            Membangun solusi digital yang elegan, performa tinggi, dan berdampak. 
+            Setiap baris kode ditulis dengan presisi dan passion.
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-container">
+      <div class="marquee">
+        <span class="marquee-item">JavaScript <span class="dot"></span> React <span class="dot"></span> Node.js <span class="dot"></span> Python <span class="dot"></span> TypeScript <span class="dot"></span> PHP <span class="dot"></span> Laravel <span class="dot"></span> PostgreSQL</span>
+        <span class="marquee-item">JavaScript <span class="dot"></span> React <span class="dot"></span> Node.js <span class="dot"></span> Python <span class="dot"></span> TypeScript <span class="dot"></span> PHP <span class="dot"></span> Laravel <span class="dot"></span> PostgreSQL</span>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="section-header reveal">
+        <div class="section-label">// 01 — Tentang Saya</div>
+        <h2 class="section-title">Siapa <span>Saya?</span></h2>
+      </div>
+      <div class="about">
+        <div class="about-left reveal">
+          <div class="upload-photo-wrapper">
+            <button class="upload-photo-btn" id="uploadBtn" onclick="document.getElementById('photoInput').click()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              <span id="uploadBtnText">Upload Foto</span>
+            </button>
+            <input type="file" id="photoInput" class="upload-photo-input" accept="image/*">
+            <div class="about-image-frame">
+              <div class="photo-change-hint" id="photoHint">
+                <span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                  Ganti Foto
+                </span>
+              </div>
+              <div class="about-avatar">
+                <img class="avatar-photo" id="avatarPhoto" alt="Foto Marfin Vicko" src="">
+                <span class="avatar-initials">MV</span>
+                <svg class="avatar-icon" viewBox="0 0 200 200" fill="none">
+                  <circle cx="100" cy="75" r="40" stroke="#c42b2b" stroke-width="3" fill="none"/>
+                  <path d="M40 180C40 140 65 115 100 115C135 115 160 140 160 180" stroke="#c42b2b" stroke-width="3" fill="none"/>
+                  <rect x="75" y="50" width="50" height="3" rx="1.5" fill="#c42b2b" opacity="0.5"/>
+                  <circle cx="85" cy="70" r="4" fill="#c42b2b"/>
+                  <circle cx="115" cy="70" r="4" fill="#c42b2b"/>
+                  <path d="M90 85Q100 95 110 85" stroke="#c42b2b" stroke-width="2" fill="none"/>
+                  <rect x="60" y="130" width="80" height="40" rx="5" stroke="#c42b2b" stroke-width="2" fill="rgba(196,43,43,0.1)"/>
+                  <text x="100" y="155" text-anchor="middle" fill="#c42b2b" font-family="JetBrains Mono" font-size="12">&lt;/&gt;</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-number" data-count="5">0</span>
+              <span class="stat-label">Tahun Exp</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-count="30">0</span>
+              <span class="stat-label">Proyek</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-count="15">0</span>
+              <span class="stat-label">Klien</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-right reveal">
+          <h3 class="about-heading">Marfin Vicko Firmansyah</h3>
+          <p class="about-text">
+            Saya adalah seorang programmer yang berdedikasi dengan pengalaman dalam 
+            pengembangan web full-stack. Perjalanan saya di dunia programming dimulai 
+            dari ketertarikan terhadap bagaimana teknologi bisa mengubah cara kita 
+            berinteraksi dengan dunia digital.
+            <br><br>
+            Dengan menguasai berbagai bahasa pemrograman dan framework, saya mampu 
+            menciptakan aplikasi web yang tidak hanya fungsional tetapi juga memiliki 
+            pengalaman pengguna yang luar biasa. Saya percaya bahwa kode yang baik 
+            adalah seni — bersih, efisien, dan elegan.
+          </p>
+          <div class="about-detail-grid">
+            <div class="detail-item">
+              <div class="detail-label">Nama</div>
+              <div class="detail-value">Marfin Vicko F.</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Spesialisasi</div>
+              <div class="detail-value">Full-Stack Dev</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Bahasa</div>
+              <div class="detail-value">ID / EN</div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Status</div>
+              <div class="detail-value">Available 🟢</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="section-header reveal">
+        <div class="section-label">// 02 — Keahlian</div>
+        <h2 class="section-title">Tech <span>Stack</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-icon">⚛️</div>
+          <div class="skill-name">Frontend</div>
+          <div class="skill-desc">React, Vue.js, Next.js, HTML5, CSS3, Tailwind CSS, TypeScript</div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="92"></div>
+          </div>
+          <div class="skill-bar-label">
+            <span>Proficiency</span>
+            <span>92%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🖥️</div>
+          <div class="skill-name">Backend</div>
+          <div class="skill-desc">Node.js, Express, Laravel, PHP, Python, Django, REST API</div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="88"></div>
+          </div>
+          <div class="skill-bar-label">
+            <span>Proficiency</span>
+            <span>88%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🗄️</div>
+          <div class="skill-name">Database</div>
+          <div class="skill-desc">PostgreSQL, MySQL, MongoDB, Redis, Firebase, Supabase</div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="85"></div>
+          </div>
+          <div class="skill-bar-label">
+            <span>Proficiency</span>
+            <span>85%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">☁️</div>
+          <div class="skill-name">DevOps & Cloud</div>
+          <div class="skill-desc">Docker, AWS, CI/CD, Git, Linux, Nginx, Vercel</div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="78"></div>
+          </div>
+          <div class="skill-bar-label">
+            <span>Proficiency</span>
+            <span>78%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">📱</div>
+          <div class="skill-name">Mobile</div>
+          <div class="skill-desc">React Native, Flutter, Responsive Design, PWA</div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="75"></div>
+          </div>
+          <div class="skill-bar-label">
+            <span>Proficiency</span>
+            <span>75%</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🧪</div>
+          <div class="skill-name">Testing & Tools</div>
+          <div class="skill-desc">Jest, Cypress, Postman, Figma, VS Code, Terminal</div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="82"></div>
+          </div>
+          <div class="skill-bar-label">
+            <span>Proficiency</span>
+            <span>82%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section" id="process">
+      <div class="section-header reveal">
+        <div class="section-label">// 03 — Alur Kerja</div>
+        <h2 class="section-title">Etapa <span>Kerja</span></h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-card reveal">
+          <div class="process-num">01</div>
+          <div class="process-content">
+            <h3>Konsultasi</h3>
+            <p>Memahami kebutuhan klien, tujuan proyek, dan menentukan scope pekerjaan secara detail.</p>
+          </div>
+        </div>
+        <div class="process-card reveal">
+          <div class="process-num">02</div>
+          <div class="process-content">
+            <h3>Perencanaan</h3>
+            <p>Membuat arsitektur sistem, wireframe, dan tech stack yang tepat untuk proyek.</p>
+          </div>
+        </div>
+        <div class="process-card reveal">
+          <div class="process-num">03</div>
+          <div class="process-content">
+            <h3>Development</h3>
+            <p>Menulis kode berkualitas tinggi dengan best practices, clean code, dan dokumentasi.</p>
+          </div>
+        </div>
+        <div class="process-card reveal">
+          <div class="process-num">04</div>
+          <div class="process-content">
+            <h3>Testing & QA</h3>
+            <p>Pengujian menyeluruh untuk memastikan aplikasi berjalan sempurna tanpa bug.</p>
+          </div>
+        </div>
+        <div class="process-card reveal">
+          <div class="process-num">05</div>
+          <div class="process-content">
+            <h3>Deployment</h3>
+            <p>Deploy ke production dengan setup CI/CD, monitoring, dan optimasi performa.</p>
+          </div>
+        </div>
+        <div class="process-card reveal">
+          <div class="process-num">06</div>
+          <div class="process-content">
+            <h3>Maintenance</h3>
+            <p>Dukungan berkelanjutan, update fitur, dan pemeliharaan sistem pasca-launch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="section-header reveal">
+        <div class="section-label">// 04 — Proyek</div>
+        <h2 class="section-title">Karya <span>Terbaru</span></h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card featured reveal">
+          <div class="project-preview">
+            <div class="project-preview-pattern"></div>
+            <div class="project-mockup">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+              </div>
+              <div class="mockup-code">
+const app = express();<br>
+app.use(cors());<br>
+app.use(helmet());<br><br>
+// API Routes<br>
+app.use('/api/v1', router);<br>
+app.use('/auth', authRouter);<br><br>
+// Real-time WebSocket<br>
+io.on('connection', (socket) => {<br>
+&nbsp;&nbsp;socket.join('dashboard');<br>
+&nbsp;&nbsp;emitLiveData(socket);<br>
+});
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">PostgreSQL</span>
+              <span class="project-tag">WebSocket</span>
+            </div>
+            <h3 class="project-name">E-Commerce Dashboard</h3>
+            <p class="project-desc">Platform dashboard analytics real-time untuk manajemen e-commerce dengan fitur monitoring penjualan, inventory tracking, dan laporan keuangan otomatis.</p>
+            <a href="#" class="project-link">Lihat Detail →</a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-preview">
+            <div class="project-preview-pattern"></div>
+            <div class="project-mockup">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+              </div>
+              <div class="mockup-body">
+                <div class="mockup-line"></div>
+                <div class="mockup-line"></div>
+                <div class="mockup-line"></div>
+                <div class="mockup-line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">Next.js</span>
+              <span class="project-tag">Prisma</span>
+              <span class="project-tag">Stripe</span>
+            </div>
+            <h3 class="project-name">SaaS Platform</h3>
+            <p class="project-desc">Aplikasi SaaS multi-tenant dengan sistem billing otomatis, manajemen user, dan API integration.</p>
+            <a href="#" class="project-link">Lihat Detail →</a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-preview">
+            <div class="project-preview-pattern"></div>
+            <div class="project-mockup">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+              </div>
+              <div class="mockup-body">
+                <div class="mockup-line"></div>
+                <div class="mockup-line"></div>
+                <div class="mockup-line"></div>
+                <div class="mockup-line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">Laravel</span>
+              <span class="project-tag">Vue.js</span>
+              <span class="project-tag">MySQL</span>
+            </div>
+            <h3 class="project-name">CMS Enterprise</h3>
+            <p class="project-desc">Sistem manajemen konten enterprise-grade dengan workflow approval dan multi-language support.</p>
+            <a href="#" class="project-link">Lihat Detail →</a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-preview">
+            <div class="project-preview-pattern"></div>
+            <div class="project-mockup">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+              </div>
+              <div class="mockup-code">
+import tensorflow as tf<br>
+from fastapi import FastAPI<br><br>
+model = tf.keras.load_model(<br>
+&nbsp;&nbsp;'sentiment_v3.h5'<br>
+)<br><br>
+@app.post("/predict")<br>
+async def predict(text: str):<br>
+&nbsp;&nbsp;result = model.predict(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;preprocess(text)<br>
+&nbsp;&nbsp;)<br>
+&nbsp;&nbsp;return {"sentiment": result}
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">TensorFlow</span>
+            </div>
+            <h3 class="project-name">AI Sentiment API</h3>
+            <p class="project-desc">REST API machine learning untuk analisis sentimen teks dengan akurasi 94% menggunakan NLP.</p>
+            <a href="#" class="project-link">Lihat Detail →</a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-preview">
+            <div class="project-preview-pattern"></div>
+            <div class="project-mockup">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+                <span class="mockup-dot"></span>
+              </div>
+              <div class="mockup-body">
+                <div class="mockup-line"></div>
+                <div class="mockup-line"></div>
+                <div class="mockup-line"></div>
+                <div class="mockup-line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">React Native</span>
+              <span class="project-tag">Firebase</span>
+              <span class="project-tag">Maps API</span>
+            </div>
+            <h3 class="project-name">Mobile Delivery App</h3>
+            <p class="project-desc">Aplikasi mobile delivery dengan real-time tracking, push notification, dan payment gateway terintegrasi.</p>
+            <a href="#" class="project-link">Lihat Detail →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee 2 -->
+    <div class="marquee-container">
+      <div class="marquee" style="animation-direction: reverse;">
+        <span class="marquee-item">Clean Code <span class="dot"></span> Scalable <span class="dot"></span> Performance <span class="dot"></span> Security <span class="dot"></span> Best Practices <span class="dot"></span> Responsive <span class="dot"></span> Accessible</span>
+        <span class="marquee-item">Clean Code <span class="dot"></span> Scalable <span class="dot"></span> Performance <span class="dot"></span> Security <span class="dot"></span> Best Practices <span class="dot"></span> Responsive <span class="dot"></span> Accessible</span>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="contact">
+        <div class="section-header reveal" style="margin-bottom: 40px;">
+          <div class="section-label">// 05 — Kolaborasi</div>
+          <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3.5rem);">Ayo <span>Bekerja Sama</span></h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-left reveal">
+            <p class="contact-text">
+              Ingin membangun website, aplikasi web, atau solusi digital lainnya? 
+              Saya siap membantu mewujudkan ide Anda menjadi kenyataan. 
+              Mari diskusikan proyek Anda!
+            </p>
+            <div class="contact-info-list">
+              <a href="https://wa.me/6288276488122" target="_blank" class="contact-info-item contact-info-link">
+                <div class="contact-info-icon whatsapp-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-info-label">WhatsApp</div>
+                  <div class="contact-info-value">088276488122</div>
+                </div>
+              </a>
+              <a href="https://instagram.com/mrsho_finn28" target="_blank" class="contact-info-item contact-info-link">
+                <div class="contact-info-icon instagram-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-info-label">Instagram</div>
+                  <div class="contact-info-value">@mrsho_finn28</div>
+                </div>
+              </a>
+              <a href="https://github.com/vickokeceparah" target="_blank" class="contact-info-item contact-info-link">
+                <div class="contact-info-icon github-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-info-label">GitHub</div>
+                  <div class="contact-info-value">vickokeceparah</div>
+                </div>
+              </a>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">📍</div>
+                <div>
+                  <div class="contact-info-label">Lokasi</div>
+                  <div class="contact-info-value">Indonesia</div>
+                </div>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="https://github.com/vickokeceparah" target="_blank" class="social-link" title="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="https://wa.me/6288276488122" target="_blank" class="social-link whatsapp-social" title="WhatsApp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+              <a href="https://instagram.com/mrsho_finn28" target="_blank" class="social-link instagram-social" title="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="contact-right reveal">
+            <div class="contact-input-group">
+              <input type="text" class="contact-input" placeholder="Nama Anda">
+            </div>
+            <div class="contact-input-group">
+              <input type="email" class="contact-input" placeholder="Email Anda">
+            </div>
+            <div class="contact-input-group">
+              <input type="text" class="contact-input" placeholder="Subjek">
+            </div>
+            <div class="contact-input-group">
+              <textarea class="contact-textarea" placeholder="Ceritakan proyek Anda..."></textarea>
+            </div>
+            <button class="contact-btn" onclick="handleSubmit()">Kirim Pesan →</button>
+            <a href="https://wa.me/6288276488122?text=Halo%20Marfin%2C%20saya%20tertarik%20untuk%20berdiskusi%20tentang%20proyek." target="_blank" class="whatsapp-chat-btn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Chat via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026 <span>Marfin Vicko Firmansyah</span>. Dibangun dengan ❤️ dan kopi.</p>
+    </footer>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6288276488122?text=Halo%20Marfin%2C%20saya%20ingin%20berdiskusi%20tentang%20proyek." target="_blank" class="whatsapp-float" title="Chat WhatsApp">
+    <span class="wa-tooltip">Chat dengan saya 💬</span>
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
