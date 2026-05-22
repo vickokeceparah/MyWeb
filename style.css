@@ -1498,6 +1498,7 @@ body {
   z-index: 150;
   justify-content: center;
   align-items: center;
+  pointer-events: auto;
 }
 
 .mobile-overlay.active {
@@ -1519,6 +1520,10 @@ body {
   color: var(--cream);
   text-decoration: none;
   transition: color 0.3s;
+  pointer-events: auto;
+  display: inline-block;
+  position: relative;
+  z-index: 9999;
 }
 
 .mobile-nav a:hover {
